@@ -200,15 +200,38 @@ blockquote {
   color: #000;
   font-weight: 500;
 }
-.lx-post p {
+/* =========================
+   文章段落首行缩进
+   ========================= */
+.lx-post p:not(:has(img)),
+.post-list p:not(:has(img)) {
   font-size: inherit;
   line-height: inherit;
   letter-spacing: inherit;
-  margin-bottom: 1em;
-  text-indent: 2em !important; /* 首行缩进两个字符宽度 */
-}
-.post-list p {
-  text-indent: 2em !important; /* 首行缩进两个字符宽 */
-  white-space: pre-wrap; /* 保留换行符和空格 */
   margin-bottom: 1em; /* 段落间距 */
+  text-indent: 1.5em; /* 首行缩进1.5字符宽 */
+  white-space: pre-wrap; /* 保留换行符和空格 */
+}
+/* =========================
+   列表样式
+   ========================= */
+.lx-post ol,
+.lx-post ul,
+.post-list ol,
+.post-list ul {
+  list-style-position: outside; /* 编号/符号在外 */
+  padding-left: 1.5em; /* 整体左缩进1.5字符宽 */
+  margin: 0 0 1em 0; /* 上下间距 */
+}
+/* li 内文字不缩进 */
+.lx-post li,
+.post-list li {
+  text-indent: 0 !important; /* 禁止首行缩进 */
+  margin-bottom: 0.5em; /* 列表项间距 */
+}
+/* li 内的段落 p */
+.lx-post li p,
+.post-list li p {
+  text-indent: 0 !important; /* 段落首行不缩进 */
+  margin: 0.5em 0; /* 段落间距 */
 }
