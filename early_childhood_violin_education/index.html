@@ -247,7 +247,26 @@
 }());
 </script>
 
-
+<script src="/js/Valine.min.js"></script>
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: true,
+    appId: 'XcO2w58tdMTfQyYl9vA82R1K-gzGzoHsz',
+    appKey: '3c6e6o3yxo2Et02DR8WwZHJt',
+    placeholder: '说点什么吧',
+    avatar: 'monsterid',
+    meta: guest,
+    pageSize: '10' || 10,
+    lang: 'zh-CN' || 'zh-cn'
+  });
+</script>
 
 </body>
 </html>
