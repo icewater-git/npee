@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><!-- hexo injector head_begin start -->
+<link rel="stylesheet" href="/css/bilicard.css">
+<!-- hexo injector head_begin end -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="小提琴, 冰水之源">
+    
+    <meta name="author" content="冰水之源">
+    
+    <!-- Completely eliminate flash of wrong theme -->
+    <script>
+        (function() {
+            const THEME_KEY = "REDEFINE-THEME-STATUS";
+            const DARK = "dark", LIGHT = "light";
+            
+            // Get preferred theme
+            function getTheme() {
+                try {
+                    const saved = localStorage.getItem(THEME_KEY);
+                    if (saved) {
+                        const { isDark } = JSON.parse(saved);
+                        return isDark ? DARK : LIGHT;
+                    }
+                } catch (e) {}
+                
+                return matchMedia("(prefers-color-scheme: dark)").matches ? DARK : LIGHT;
+            }
+            
+            // Apply theme to document
+            function applyTheme(theme) {
+                const isDark = theme === DARK;
+                const root = document.documentElement;
+                
+                // Set data attribute for CSS variables
+                root.setAttribute("data-theme", theme);
+                
+                // Set classes for compatibility
+                root.classList.add(theme);
+                root.classList.remove(isDark ? LIGHT : DARK);
+                root.style.colorScheme = theme;
+            }
+            
+            // Initial application
+            const theme = getTheme();
+            applyTheme(theme);
+            
+            // Listen for system preference changes
+            matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
+                // Only update if using system preference (no localStorage entry)
+                if (!localStorage.getItem(THEME_KEY)) {
+                    applyTheme(matches ? DARK : LIGHT);
+                }
+            });
+            
+            // Set body classes once DOM is ready
+            if (document.readyState !== "loading") {
+                document.body.classList.add(theme + "-mode");
+            } else {
+                document.addEventListener("DOMContentLoaded", () => {
+                    document.body.classList.add(theme + "-mode");
+                    document.body.classList.remove((theme === DARK ? LIGHT : DARK) + "-mode");
+                });
+            }
+        })();
+    </script>
+    
+    <!-- Critical CSS to prevent flash -->
+    <style>
+        :root[data-theme="dark"] {
+            --background-color: #202124;
+            --background-color-transparent: rgba(32, 33, 36, 0.6);
+            --second-background-color: #2d2e32;
+            --third-background-color: #34353a;
+            --third-background-color-transparent: rgba(32, 33, 36, 0.6);
+            --primary-color: #0066CC;
+            --first-text-color: #ffffff;
+            --second-text-color: #eeeeee;
+            --third-text-color: #bebec6;
+            --fourth-text-color: #999999;
+            --default-text-color: #bebec6;
+            --invert-text-color: #373D3F;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --selection-color: #0066CC;
+            --shadow-color-1: rgba(255, 255, 255, 0.08);
+            --shadow-color-2: rgba(255, 255, 255, 0.05);
+        }
+        
+        :root[data-theme="light"] {
+            --background-color: #fff;
+            --background-color-transparent: rgba(255, 255, 255, 0.6);
+            --second-background-color: #f8f8f8;
+            --third-background-color: #f2f2f2;
+            --third-background-color-transparent: rgba(241, 241, 241, 0.6);
+            --primary-color: #0066CC;
+            --first-text-color: #16171a;
+            --second-text-color: #2f3037;
+            --third-text-color: #5e5e5e;
+            --fourth-text-color: #eeeeee;
+            --default-text-color: #373D3F;
+            --invert-text-color: #bebec6;
+            --border-color: rgba(0, 0, 0, 0.08);
+            --selection-color: #0066CC;
+            --shadow-color-1: rgba(0, 0, 0, 0.08);
+            --shadow-color-2: rgba(0, 0, 0, 0.05);
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--default-text-color);
+        }
+        
+        /* Apply body classes as soon as DOM is ready */
+        :root[data-theme="dark"] body {
+            background-color: var(--background-color);
+            color: var(--default-text-color);
+        }
+    </style>
+    
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://npee.ice68.cn/root/prefix_36_with-/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="冰水之源，重定义你的考研之路">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前缀36. with-">
+<meta property="og:url" content="https://npee.ice68.cn/root/prefix_36_with-/index.html">
+<meta property="og:site_name" content="小提琴🎻冰水之源">
+<meta property="og:description" content="冰水之源，重定义你的考研之路">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yx-prod-resources-shared-1254112465.cos.ap-beijing.myqcloud.com/1/a569b4e4f716e78b7f5c4fd747f63b75-115539">
+<meta property="article:published_time" content="2025-09-29T02:00:00.000Z">
+<meta property="article:modified_time" content="2025-09-30T08:28:46.964Z">
+<meta property="article:author" content="冰水之源">
+<meta property="article:tag" content="小提琴, 冰水之源">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yx-prod-resources-shared-1254112465.cos.ap-beijing.myqcloud.com/1/a569b4e4f716e78b7f5c4fd747f63b75-115539">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://yx-prod-resources-shared-1254112465.cos.ap-beijing.myqcloud.com/1/fa224d8813d21de42b805f2f40cc6658-35180" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://yx-prod-resources-shared-1254112465.cos.ap-beijing.myqcloud.com/1/fa224d8813d21de42b805f2f40cc6658-35180">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="https://yx-prod-resources-shared-1254112465.cos.ap-beijing.myqcloud.com/1/fa224d8813d21de42b805f2f40cc6658-35180">
+    <!--- Page Info-->
+    
+    <title>
+        
+            前缀36. with- | 冰水考研
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"npee.ice68.cn","root":"/","language":"zh-CN"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":false,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"side_tools":{"gear_rotation":true,"auto_expand":false},"open_graph":{"enable":true,"image":"https://yx-prod-resources-shared-1254112465.cos.ap-beijing.myqcloud.com/1/a569b4e4f716e78b7f5c4fd747f63b75-115539","description":"冰水之源，重定义你的考研之路"},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"冰水考研","subtitle":{"text":["分享考研经验、资料与心得。最初是为自己复习而建立，如今也希望帮助到更多备考的朋友。"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.5","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2025/9/26 11:45:10"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                冰水考研
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">346</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">前缀36. with-</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://yx-prod-resources-shared-1254112465.cos.ap-beijing.myqcloud.com/1/fa224d8813d21de42b805f2f40cc6658-35180">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">冰水之源</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv7</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-09-29 10:00</span>
+        <span class="mobile">2025-09-29 10:00</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-09-30 16:28:46</span>
+            <span class="mobile">2025-09-30 16:28:46</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>17 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>1 分钟</span>
+        </span>
+    
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			
+<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="619d3788eb1483fcfdd654fd9cdc555fc92da5a60cb24591f9deedd2c4929d97">01fea45c17e098bef80f506c389f0410638763520c4d40e976b060006f5c4a2521c335cceef3abb192a967884bbdb533118800dbe9d9113327cb705ff090c9302f006b62bc21d53ca9236a9fc82305ef39c4cc2def1704849b9a909c7b85b4329dd383054a79373ed27a8b5b318f4aa50f88fc2a1239a91e738ca9cf47878581ed6541378969603ef5efde70c1c78cdae2cceb46f21cbe129c9261dca9b4031597f93475f0495e5f5a092ea8259e81f4be2e9f01eda4f24f44495c571f4ca74a2c8a84730697fb51f17a22975ff28ccdc48e691dc8f87c1568209b4a1955115d45e193a847abe35b67c1c32746bdad1c5e127c4dbbfce49f0aca083a926a21fa3f9f89478fc39fae1c8b60b05c01bc472b10b61b88f52c1fba03f305443a3aa61a9f41f97992c63dd8c4a7ebbfe55ee29bcc0b5710a5af617b8c2319f9c1e35a045b4ee7d6000686c08521e02f82985fe833f53798fbedf1713f1916ce6d0193be1379866326a7b8fa6e0b4c04e678018ce7e860edb5379d5fad5a0acd1acee7a9af556a5ae0f9f634c9148ddc04b629d6d6e0868ba1960cb525d3ebe1d6b90be521c65acd992392ab30e55c6ecaeaccde19d09baa380a3b8382eff9b9005510d6c45d835b3f619a02acc10c8cf74046215c0dd10c7e3392c45192bd8087046fa59e95f5dea5ca44ed7676f9bb3652d072bf04698da716068f30d549578747b08931551df780b857de2ed928b127795dfa5a330bf70c6517549abb8394117600ecc18d1e432a492e565f0c9878ba399d23a078ec23f7426b39c8e1bc12a24373dfcf44e03f295497a67e85a9d16d4ad28be4e101ffbe694d9efca5bb2f91b4f49595ead573cdcf7c1b6c36e69f1809b433427798ff2a08f17992ca4cbf1eedadc6f79899a4176bfb91cbe32d9fd3f6ba996cb27624e668a22e7d42be05ae375e526cbd16e1235cb4fe831b9166ce0184bc35826f030ad5802390fd3ed69d98f1735910ecf7794ecd8343a4c586ee161a7411c4d5b5daa4bbeaa9786640ff7d6dbb197d0de4c9ef22bf07c6bf9e71027b5c86bab05b9506ed84a8982bb1375579c0439512e6364826534012980c795b14022a685a45bff96c4af996e63fc5017b51ccff62599e407c2c9c7eafeb5cd9a6bc33085b4c43e6488de388ffb8bf4e6349504813f300422427ef95428d48b5be9dcf8803e8ca8dc6899fe35fb30bae8d887f7198ce9019f6e7ed6d21a897a3936fb7594a7624bf2775ab7d310dcb8ef23e85d4cba280a7f9ebb9706885de41e7a7938dda23415bc3c6939cafa65701a4be9ea1b46006a4ebdb1bcd5552394b7766bbae1d88500d91138b063afe4840617a5f83f844fd1789b30c69197fc3349a5e6a98e4bd93a0f3dbfc6594cf6cdd8153fa1581d1c3d3cc575b642ce390ae32b4911c7271de6ad2bb6ae737b0781d55f5d3f3eab8b3c80d5cd98d26d48d09d03f5ee19658532559cf80c0dcfd491f0bee9c0f34bf838fcf927f5a27d706c7340e85f4cbaa944031edbf4a5a23a237458dc0e2d5772fd047799d6be37eaacc87242ed3317475593501dcff247a659bfd484cc9a55c31e18cd173393db9021655652df798301b5152d981e8e3d63688dddd23c84cb867b2c20616e21f7fc056f390cf42cbe2e1b81efc68d60a8420ad332e032577d0caaaa2d4e4b7cfcd03ade9b49fea956edf7f84e7a15e32fdc0e9e78ab9d4c69403572ad66d5e29649df4334e960dab0b5d2d44a7bf4937e0bbba35c36d22ed838f1813bedaeb77db2fd64cb447cfb2789c3d21917cb4e4067c466ce7fa8a68c4295e74acc10f1ca37abe4d783d3d830724e195953a32a009f352176b936189229bf2493fdfb29958763b8f64a456183048c1f9120e52a0b348eb91ff64b4b99f5380ac8ff24daf64efbb5ad427560c4fda306f8ae065dac239d3ed29cba68e9d3011d0a307882a089122219c738a9acda5801f2e2ebd77e7eb9c94d494190ca7c9187bcb869c47e101a8c0cdf40a87d3a6d823f57fd6f4d45d73c4ac8f397e0ec9f63cab39a519960b1a8bbdb59685866904e4db2b39d0430dd1c651ec09e57754a26be5d0d2b7fcfac8c6d462854aee5c78fe8b24006edb46f48bd2a45a88059200cd33df9aaadf3bfc126ced0e2a714ae8fa11dd9ee1cfcf2bba4e350fb00aa8b59a6e85f2947ee3b76021bed90dc1e9821d12a90cf05e6df2ce9292ff9ee4535139ec801682ef5d87709de921ca6a0cf635d31f5796dc4d9114fe50516359e89ac406f81c647e1e2be84a29fa7f9dee04f75d2c1c3a834affb8b1e1c1246df64655b583c741d9f4f8843b793049c2e262c609f25680c036bec7419aee0eab1991b79d5c707fc72ef125599f385fdebd50ffb8564ff6e0a55c135834bfc0b05492b88d40c7dde5d57d4b0559d18e55195a3588747e36bfce2ae0f1bd312b0a2e98a0e44a1cdd3d4ae4b33f68e0961d232c455b8be7baf094a37ad9fa9b8ba053c9b0868e44fc303c5744a07dbf8110238e03b26c32318ae9e9959c5c230292974252693366c299e66f1e630ba0df372a630908d95f60316cce732cd24cc5c9d4877691903be741af4c1d5fa1afbf70b898e4ca9f8e9504d3c3d96838c2998c20b7c3e3a175d792b38ac286203fa9ed2a5389dd9f7bbdaf483d75f0ebcea5712a1c28e7750c461cea0129d8fcbfcbc4ae495810fbeef2dac454378288c9a3f52a1a4ca246563cb08f16855d1f4fc6176e2191a1fa23f1c8a2941f950f6f81a0f1654bb5f3991cf99ae0389473ca6ccf6858594d4dbf47310552cf0751e6f519a4169a8f017e76421cc0b7ac96eac22b200c186dcddde7591128fa6dfc2e46cf839e4a927db3908d0fd5ed81201e62d183e608424435241f69c197e78491d2cfd67a66d418f8cb35cfb3e3fc15e43e995adf9f2c07a985750b16105cfc4524186d7474712a9e1afa556d05ff6b290ed98f8b34b60a3f054fd5da60f6fdf572482ff0d7c6bd30bb5da2ab1bd0d47f56a93bbd7bf051283629a2397f0e8c1cf3284b0a3427051d05b2dd48d7796b3173b3a31be60fd35b83a8a6233868064791cdacf1bac86d2ad2d1bb53928f747e6e1083776df4946ccc46757d4bdbe8b3b7e0543a6fe35a16213dddae9ad48b3cd3cc6fd9491d0cae45406b6d4318c17f46e3edbf9e44993187a2872fe1d1d06da0e9886beca4682b38599af1730571279086c350a44ac98be14faf48a08c76f1ebd096e51d5acf1e233c90d954c15beaf59453510e4ad60331766c4705f335eb9cf86c1f2418fa059022ecc13232fe84c3a41e85b4deb719023f5b7643c1e1eb98e8d6d17f19a7d2f70b1cc23a0c5c149895b392ecec081c368a64e0a85f970748aa1d5e697ceb00ee2ec8dc57959e69024e21fdaac3b35a7d766c45d98e1135132d5a12b95c0155c679ef48feb4f74a548721d11bbc2f6c0a46f732ea18c3e98f0a5ed68b211988f094f7daf7a31f3ba15f39c623ac9631faee1c7471b810d565314159dc226a39871a0048a9f4bafb6d00c70977a5ca1b4e50bd3ff4bb29ed10cb91de37aa92d5d1163186b25752a3022acf84ddbe8f665ae952519ad0dc1210ad1810ece6ea0dfbe9a8bbf2d9d044a321e3cefae70cb31918275648b43d91e47627bb873c6f6b71e6439d6c8d0765cdbcf4813eccfff0d7ac233314f25be7f680484055d0b1149aecc5192141b9001f3bef0c264f7c912ebf30aa2077e1e6a929d44f1cf28919158852950d3e3e25020f2ff730f96ca00d382e832b71f3361925bc8da28c880924547b6e5b20ed507c7e98875be908584e181d15295184b55c1774f8c038282b652890e793747d3365732d62e59d97b8dbb5dbf0f0542011116a449be0cd5e2d256413e2c5d8905ae89304f22b500744da1625ef36ae1595c865110074aa21b4c92a63da8c413efb34f9af8524531a2b11c0b5e63335a92a55d52df7d4396ba94989d1020d6963aa2ad85b06830d57dc36c5e0e9b7a225e66ecdf98c105085d956a279697214d441777a48d452fbcc78777619ff6e219a92cd16050437bf70c27fd52f004290e5fd800d610c505672e55d2da5ebb78f1564d174ca64a9d2db314ea5782c07de65cc0ddcb19091fe829949e011370869c120a74fca3dad31b3802a6b5ae24ca300dfd52c65fb584c4f5516b10a82a31a63683a27938b0a02f6d62018ef19f6678c9714bcff1e0ba598fb7405a23b20862238c033264af2fb089d21e9fd8a39693de6d61322b6916f1cdd11bf8217012cbe8e398a80d5e096dd728a3da66cc91816b21808c22faf423a99735f084e4b6ae5ca93da12f7c264aa6dd3873a0290962f4471ab2f522e1a2ba5ae0100e13b9e98f08779b3ff63b0b30de1dc182fcb4726237074d428b047e0c01a3a8cc78d493ac4a4731a04c29d5d9c84a975f936be0b2558b1a92eddd179858e5a7b6f163e6610867ab716fe07b8dc7447b8fb527e905a4a7fec7b7f8bb920a5dc9816d231a4de308af1f99e4eed73cb8a76854c53cfbe409a337f8d278a78597d98a251544f0151bba7acdd61eef428aef364bd5fe552598aa06bad56be2f883a28fc0d2c3c6b4abeaaafa42617b8032eb2801cc63a8a2ccd7d6b83a7e178963b06fe4c78c72c9c4b26987ae6bd4f1e0801137fb45cf8c72888a0b8e85dac01ab0fc3e41bf47a2f8b2396e4f240611d0f5e4c4aed8a72d1692d856f1bd743b58e61276ab2486baea72f4a2b519a3732008fe7201e3720e07167884210b74fa01f32493d6708c54db8830568723e38e4a36c339f5e1773a6eb73c41f0173b4f14a718fc1d16340d59bdcd342ec061c6d7cbe5615f4d1e450c06b81d371fb845ed6f314e6a1a8c143ff8e1ba12b440c2d7f560f83e30537dda223f86f960a7423dd1272722cc13f1dd2522aaaf900819955ed3e50c59f7d47ed4024fb5d2b7f9ed0b77a2e21743d01065cec0059a1307369829b1cc37327f3fdeea887a2194fd8be8bb75a08ef180be892eb47061bcf2fad1e2dc8d8a75184e2f1b0da30663f4e382685035aa6da057da7421c28fa4c27adaccc758dfefb14ea7c6ef2671e30697b4dd4dd6b192d53a79d0168eb69a5893f1079eae72f859965cf96b0ca71d1c8091fe638646e95f1e14737950ff437be6536aa140f1f0b17e301db61a0af3f927b22f478ef7362ea1261aa374f681fc00814901a8e516b02b26058e90fab5629ce3d5f439d339db2f0982dbc520fdaa25c49c2771d7d7605409cbfb1e63429e582d414f80f13c80b589ded1ac141352a64ede63b7e24832cec5a732779bc6306cb681c84dc5ab716415a91cd005502a8b5fd9b8d2c5ddd054ce74603aa69f305f1c03446</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">考研</span>
+      </label>
+    </div>
+  </div>
+</div>
+<link href="/css/hbe.style.css" rel="stylesheet" type="text/css"><script data-swup-reload-script type="module" src="/js/plugins/hbe.js"></script>
+<script data-swup-reload-script type="module">
+import {initHBE} from "/js/plugins/hbe.js";
+  console.log("hexo-blog-encrypt: loaded.");
+    initHBE();
+</script>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> 前缀36. with-</li>
+        <li><strong>作者:</strong> 冰水之源</li>
+        <li><strong>创建于
+                :</strong> 2025-09-29 10:00:00</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2025-09-30 16:28:46
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://npee.ice68.cn/root/prefix_36_with-/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/root/prefix_35_up-/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">前缀35. up-</span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/root/prefix_3_ab-_ac-_af-_ap-_ar-_as-_at-/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">前缀3. ab-/ac-/af-/ap-/ar-/as-/at-</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">目录</div>
+		<div class="page-title">前缀36. with-</div>
+		
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2025</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">冰水之源</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共撰写了 346 篇文章
+                    </span>
+                    
+                        <span>
+                            共 5.9k 字
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+        </div>
+        
+        
+            <div>
+                网站已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>
